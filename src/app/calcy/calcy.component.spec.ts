@@ -10,8 +10,8 @@ describe('CalcyComponent', () => {
     await TestBed.configureTestingModule({
       imports: [CalcyComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CalcyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
