@@ -1,4 +1,5 @@
-# 3CNT Application:
+# 3CNT:
+- _**`3CNT`** is an application for students, aimed to reduce redundancy of using different applications while creating notes._
 - **This application provides 5 different apps in a single Application.**
 - ```
   Calculator
@@ -7,9 +8,9 @@
   Notes
   To-Do List
   ```
-  Hence the name, 3CNT.
+  _Hence the name, `3CNT`._
 
 - This application is built for students, making it easier for students to create their notes, add to-do list, perform calculations and more in just a single application.
-- This removes the redundancy of opening other applications.
+- _This removes the redundancy of opening other applications._
 
-- The application is still in the making, if you have any suggestions or issues, feel free to leave a suggestion or issue.
+- The application is still in the making, any suggestions or issues will be appreciated.
