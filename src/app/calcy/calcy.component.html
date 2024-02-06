@@ -2,14 +2,14 @@
     <div class="container">
         <div class="container-display">
             <form action="" [formGroup]="inputval">
-                <input type="text" formControlName="text">
+                <input type="text" formControlName="text" >
             </form>
         </div>
 
         <div class="container-btn">
             <div class="top-row-btn">
                 <button (click)="buttonClick($event.target)" class="btn">%</button>
-                <button (click)="calculateSquareRoot($event)" class="btn">√</button>
+                <button (click)=" calculateSquareRoot($event)" class="btn">√</button>
                 <button (click)="clearBtn()" class="btn">C</button>
                 <button (click)="buttonClick($event.target)" class="btn">/</button>
             </div>
@@ -35,7 +35,7 @@
                 <button (click)="calculate()" class="btn">=</button>
                 <button (click)="buttonClick($event.target)" class="btn">0</button>
                 <button (click)="buttonClick($event.target)" class="btn">.</button>
-                <button (click)="deleteBtn()" class="btn">DEL</button>
+                <button (click)="deleteBtn()" class="btn">X</button>
             </div>
         </div>
     </div>
@@ -43,4 +43,3 @@
         <button routerLink="calender">calender</button>
     </div> -->
 </div>
-

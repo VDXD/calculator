@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(#e66465, #9198e5);
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -11,7 +15,7 @@ nav .button {
     border-radius: 20px;
     font-size: 1vw;
     font-weight: 500;
-    background-color: rgb(47, 47, 47);
+    background-color: #85dcb8;
     color: white;
     box-shadow: inset 0 1px 0 0 #dcecfb;
 }
@@ -22,4 +26,3 @@ nav .button {
     border: 1px solid #84bbf3;
     color: #ffffff;
 }
-
