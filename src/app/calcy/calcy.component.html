@@ -1,41 +1,83 @@
-<div class="main">
-    <div class="container">
-        <div class="container-display">
-            <form action="" [formGroup]="inputval">
-                <input type="text" formControlName="text" >
-            </form>
-        </div>
+<div class="main flex items-center justify-center mt-[3vh]">
+    <div class="d-effect p-[2vw] rounded-[2vw] origin-[50%_100%] [transform-style:preserve-3d] [box-shadow:1rem_1rem_2rem_rgba(0,_0,_0,_0.25)] [transition:0.6s_ease_transform] animate-[rotate_2s_linear_infinite]">
+        <div class="container">
+            <div class="container-display m-[2vw]">
+                <form action="" [formGroup]="inputval">
+                    <input type="text" formControlName="text" class="input">
+                </form>
+            </div>
 
-        <div class="container-btn">
-            <div class="top-row-btn">
-                <button (click)="buttonClick($event.target)" class="btn">%</button>
-                <button (click)=" calculateSquareRoot($event)" class="btn">√</button>
-                <button (click)="clearBtn()" class="btn">C</button>
-                <button (click)="buttonClick($event.target)" class="btn">/</button>
-            </div>
-            <div class="sec-row-btn">
-                <button (click)="buttonClick($event.target)" class="btn">7</button>
-                <button (click)="buttonClick($event.target)" class="btn">8</button>
-                <button (click)="buttonClick($event.target)" class="btn">9</button>
-                <button (click)="buttonClick($event.target)" class="btn">*</button>
-            </div>
-            <div class="third-row-btn">
-                <button (click)="buttonClick($event.target)" class="btn">4</button>
-                <button (click)="buttonClick($event.target)" class="btn">5</button>
-                <button (click)="buttonClick($event.target)" class="btn">6</button>
-                <button (click)="buttonClick($event.target)" class="btn">-</button>
-            </div>
-            <div class="forth-row-btn">
-                <button (click)="buttonClick($event.target)" class="btn">1</button>
-                <button (click)="buttonClick($event.target)" class="btn">2</button>
-                <button (click)="buttonClick($event.target)" class="btn">3</button>
-                <button (click)="buttonClick($event.target)" class="btn">+</button>
-            </div>
-            <div class="last-row-btn">
-                <button (click)="calculate()" class="btn">=</button>
-                <button (click)="buttonClick($event.target)" class="btn">0</button>
-                <button (click)="buttonClick($event.target)" class="btn">.</button>
-                <button (click)="deleteBtn()" class="btn">X</button>
+            <div class="container-btn">
+                <div class="top-row-btn row-btn">
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px] ">
+                            %
+                        </span></button>
+                    <button (click)=" calculateSquareRoot($event)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            √
+                        </span></button>
+                    <button (click)="clearBtn()" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            C
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            /
+                        </span></button>
+                </div>
+                <div class="sec-row-btn row-btn">
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            7
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            8
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            9
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            *
+                        </span></button>
+                </div>
+                <div class="third-row-btn row-btn">
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            4
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            5
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            6
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            -
+                        </span></button>
+                </div>
+                <div class="forth-row-btn row-btn">
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            1
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            2
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            3
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            +
+                        </span></button>
+                </div>
+                <div class="last-row-btn row-btn">
+                    <button (click)="calculate()" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            =
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            0
+                        </span></button>
+                    <button (click)="buttonClick($event.target)" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            .
+                        </span></button>
+                    <button (click)="deleteBtn()" class="btn h-[6vh] w-[4vw] bg-[hsl(340deg_100%_32%)] rounded-[12px] border-[none] p-0 cursor-pointer outline-offset-[4px] m-[.5vw]"><span class="front block px-[1vw] py-[1vh] rounded-[12px] text-[1.25rem] bg-[hsl(345deg_100%_47%)] text-[white] -translate-y-[6px]">
+                            D
+                        </span></button>
+                </div>
             </div>
         </div>
     </div>
