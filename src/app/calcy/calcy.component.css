@@ -79,3 +79,11 @@
 .btn:active .front {
     transform: translateY(-2px);
 } 
+
+/* .btn {
+ background-color: rgb(0, 0, 0);
+} */
+
+/* .front {
+    background-color: rgb(194,183,158);
+} */
