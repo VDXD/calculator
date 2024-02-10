@@ -57,4 +57,6 @@ export class CalcyComponent implements OnInit {
       this.inputval.controls.text.setValue("BRUH")
     }
   }
+
+  
 }
