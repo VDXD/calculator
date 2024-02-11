@@ -1,5 +1,27 @@
 <!-- this is a stopWatch Component -->
-<h1>stopWatch</h1>
+<div class="main flex items-center justify-center my-20">
+    <div class="container text-center border-8 rounded-full h-72 w-72 ">
+        <div class="number text-4xl text-white mt-28">
+            <span>{{hr}} : </span>
+            <span>{{min}} : </span>
+            <span>{{sec}} : </span>
+            <span>{{ms}}</span>
+        </div>
+        <div class="btn text-3xl text-white mt-40">
+            <button class="btn-play-pause mx-10" (click)="start()">
+                <i *ngIf="!running" class="fas fa-play"></i>
+                <i *ngIf="running" class="fas fa-pause "></i>
+            </button>
+            <button (click)="reset()">
+                <i class="fas fa-redo-alt mx-10"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
 <div class="buttons flex justify-center items-center m-[5vh]">
 
     <a title="Clock"
