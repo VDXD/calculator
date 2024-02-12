@@ -36,8 +36,14 @@ export class CalcyComponent implements OnInit {
   }
 
   calculate() {
-    let result = eval(this.inputval.controls.text.value);
-    this.inputval.controls.text.setValue(result);
+    try {
+      const result = new Function('return ' + this.inputval.controls.text.value)();
+      this.inputval.controls.text.setValue(result);
+    } catch (error) {
+      console.error('Error evaluating expression:', error);
+      // Handle the error appropriately, e.g., display an error message to the user
+      this.inputval.controls.text.setValue('Error');
+    }
   }
 
   deleteBtn() {
