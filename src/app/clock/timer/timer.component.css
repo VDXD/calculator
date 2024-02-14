@@ -1,0 +1,35 @@
+#bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2vw;
+    background-color: white;
+    padding: 2vw;
+    color: black;
+}
+
+#current-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2vh;
+}
+
+#ct {
+    margin: 2vw;
+}
+
+#clock {
+    margin: 1vw;
+}
+
+

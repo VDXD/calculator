@@ -1,52 +1,23 @@
-<!-- <audio id="myAudio">
-    <source src="" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
-      
-<div id="bg" class="d-flex h-100">
-    <div id="box" class="justify-content-center align-self-center">
-            <div id="current-time">Current Time: {{ result }}
-                <div *ngIf="alarmLoading; else elseBlock" id="alarm-on">Alarm: ON</div>
-                <ng-template #elseBlock >
-                    <div id="alarm-off">Alarm: OFF</div>
-                </ng-template>
-            </div>
-            <div id="clock">{{ hours }}:{{ minutes }}</div>
-
-            <div id="clock">
-                <select [(ngModel)]="hours">
-                    <option *ngFor="let hour of hourOptions" [value]="hour">{{ hour }}</option>
-                </select>:
-                <select [(ngModel)]="minutes">
-                    <option *ngFor="let minute of minuteOptions" [value]="minute">{{ minute }}</option>
-                </select>
-            </div>
-
-            <div id="wrapper" class="control-buttons">
-                <button class="btn btn-dark" (click)="addFirstDigit()">+</button>
-                <button class="btn btn-dark"(click)="removeFirstDigit()">-</button>
-                <button class="btn btn-dark" (click)="addSecondDigit()">+</button>
-                <button class="btn btn-dark" (click)="removeSecondDigit()">-</button>
-            </div>
-            <div id="wrapper" class="btn primary">
-                <button (click)="alarm(hours,minutes)" class="btn" id="set-alarm-button">Set Alarm</button>
-            </div>
-    </div>
-</div> -->
-
-
 <audio id="myAudio">
     <source src="" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
-<div id="bg" class="d-flex h-100">
-    <div id="box" class="justify-content-center align-self-center">
-        <div id="current-time">Current Time: {{ result }}
-            <div *ngIf="alarmLoading; else elseBlock" id="alarm-on">Alarm: ON</div>
+<div id="bg" class="">
+    <div id="box" class="">
+        <div id="current-time" class="">
+            <div id="ct" class="text-[#000000] text-2xl font-['Open_Sans',_sans-serif]">{{ result }}</div>
+            <!-- <div *ngIf="alarmLoading; else elseBlock" id="alarm-on">Alarm: ON</div>
             <ng-template #elseBlock >
-                <div id="alarm-off">Alarm: OFF</div>
+                <div class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" id="alarm-off">ALARM: OFF</div>
+            </ng-template> -->
+            <div *ngIf="alarmLoading; else elseBlock" id="alarm-on" [ngClass]="{'bg-red-700': !isAlarmOff, 'text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900': isAlarmOff}">Alarm: ON</div>
+            <ng-template #elseBlock>
+                <div 
+                    class="text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                    id="alarm-off" (click)="toggleAlarm()">ALARM: OFF</div>
             </ng-template>
+
         </div>
         <div id="clock">
             <select (change)="onHourChange($event)">
@@ -56,7 +27,7 @@
                 <option *ngFor="let minute of minuteOptions" [value]="minute">{{ minute }}</option>
             </select>
         </div>
-      
+
         <div id="wrapper" class="btn primary">
             <button (click)="setAlarm()" class="btn" id="set-alarm-button">Set Alarm</button>
         </div>

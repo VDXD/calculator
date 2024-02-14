@@ -13,97 +13,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class TimerComponent implements OnInit {
 
-
-    // result: any;
-    // res: any;
-    // alarmLoading: boolean = false;
-    // x: any;
-
-    // hours: string= '00';
-    // minutes: string= '00';
-
-    // first: any = 0;
-    // second: any = 0;
-    // counter: number = 0;
-
-    // ngOnInit() {
+    // ngOnInit(): void {
 
     // }
 
-
-    // checkTime(i: any){
-    //   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    //   return i;
-    // }
-
-    // addFirstDigit(){
-    //   if(this.first<23){
-    //       if (this.first<9) {
-    //         this.first += 1;
-    //         this.hours= '0' + this.first;        
-    //       }else{
-    //         this.first += 1;
-    //         this.hours = this.first;
-    //       }
-    //   }else{
-    //       this.first = 0;
-    //       this.hours = '00';
-    //   }
-    // }
-
-    // removeFirstDigit(){
-    //   if (this.first>0) {
-    //     if (this.first<=10) {
-    //       this.first -= 1;
-    //       this.hours= '0' + this.first;        
-    //     }else{
-    //       this.first -= 1;
-    //       this.hours = this.first;
-    //     }
-    //   }else{
-    //     this.first = 23;
-    //     this.hours = '23';
-    //   }
-    // }
-
-    // addSecondDigit(){
-    //   if(this.second<59){
-    //     if (this.second<9) {
-    //       this.second += 1;
-    //       this.minutes = '0' + this.second;
-    //     }else{
-    //       this.second += 1;
-    //       this.minutes = this.second;
-    //     }
-    //   }else{
-    //     this.second = 0;
-    //     this.minutes = '00';
-    //   }
-    // }
-
-    // removeSecondDigit(){
-    //   if (this.second>0) {
-    //     if (this.second<=10) {
-    //       this.second -= 1;
-    //       this.minutes= '0' + this.second;        
-    //     }else{
-    //       this.second -= 1;
-    //       this.minutes = this.second;
-    //     }
-    //   }else{
-    //     this.second = 59;
-    //     this.minutes = '59';
-    //   }
-    // }
-
-    // alarm(x: any,y: any){
-    //   this.res = `${x}:${y}`;
-    //   this.alarmLoading = true;
-    //   alert(`Alarm set to ${this.res}`);
-    // }
-
-
-    result: any;
+    result: any = '23:20';
     res: any;
     alarmLoading: boolean = false;
     hours: string = '00';
@@ -136,6 +50,7 @@ export class TimerComponent implements OnInit {
         this.alarmLoading = true;
         this.alarmTriggered = false; // Reset the alarm triggered flag
         alert(`Alarm set to ${this.res}`);
+        this.isAlarmOff = true;
     }
 
     checkAlarm() {
@@ -163,6 +78,18 @@ export class TimerComponent implements OnInit {
         if (selectedMinute !== null) {
             this.minutes = selectedMinute;
         }
+    }
+
+    isAlarmOff: boolean = false;
+
+    toggleAlarm() {
+        this.isAlarmOff = !this.isAlarmOff;
+
+        if (!this.isAlarmOff) {
+            this.alarmTriggered = true;
+        }
+
+        console.log('Alarm is now:', this.isAlarmOff ? 'Off' : 'On');
     }
 
 }
