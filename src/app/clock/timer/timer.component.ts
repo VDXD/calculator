@@ -17,7 +17,7 @@ export class TimerComponent implements OnInit {
 
     // }
 
-    result: any = '23:20';
+    result: any = '00:00';
     res: any;
     alarmLoading: boolean = false;
     hours: string = '00';

@@ -3,33 +3,29 @@
     Your browser does not support the audio element.
 </audio>
 
-<div id="bg" class="">
-    <div id="box" class="">
+<div id="bg" class="flex items-center justify-center text-white">
+    <div id="box" class="flex items-center justify-center flex-col m-10 p-5">
         <div id="current-time" class="">
-            <div id="ct" class="text-[#000000] text-2xl font-['Open_Sans',_sans-serif]">{{ result }}</div>
-            <!-- <div *ngIf="alarmLoading; else elseBlock" id="alarm-on">Alarm: ON</div>
-            <ng-template #elseBlock >
-                <div class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" id="alarm-off">ALARM: OFF</div>
-            </ng-template> -->
-            <div *ngIf="alarmLoading; else elseBlock" id="alarm-on" [ngClass]="{'bg-red-700': !isAlarmOff, 'text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900': isAlarmOff}">Alarm: ON</div>
+            <div id="ct" class="text-[#ffffff] text-4xl font-['Open_Sans',_sans-serif]">{{ result }}</div>
+            <div *ngIf="alarmLoading; else elseBlock" id="alarm-on" [ngClass]="{'bg-red-700': !isAlarmOff, 'text-white ml-3 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900': isAlarmOff}">Alarm: ON</div>
             <ng-template #elseBlock>
                 <div 
-                    class="text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                    class="text-white ml-3 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                     id="alarm-off" (click)="toggleAlarm()">ALARM: OFF</div>
             </ng-template>
 
         </div>
-        <div id="clock">
-            <select (change)="onHourChange($event)">
+        <div id="clock" class="flex justify-center items-center">
+            <select (change)="onHourChange($event)" class="block py-2.5 px-0 w-full text-1xl text-white bg-transparent border-0 border-b-2 border-black appearance-none dark:text-black dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer mr-3">
                 <option *ngFor="let hour of hourOptions" [value]="hour">{{ hour }}</option>
             </select>:
-            <select (change)="onMinuteChange($event)">
+            <select (change)="onMinuteChange($event)" class="block py-2.5 px-0 w-full text-1xl text-white bg-transparent border-0 border-b-2 border-black appearance-none dark:text-black dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer ml-3">
                 <option *ngFor="let minute of minuteOptions" [value]="minute">{{ minute }}</option>
             </select>
         </div>
 
-        <div id="wrapper" class="btn primary">
-            <button (click)="setAlarm()" class="btn" id="set-alarm-button">Set Alarm</button>
+        <div id="wrapper" class="flex items-center justify-center">
+            <button (click)="setAlarm()" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ml-3" id="set-alarm-button">Set Alarm</button>
         </div>
     </div>
 </div>

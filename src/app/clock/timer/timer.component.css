@@ -1,11 +1,5 @@
-#bg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-}
 
-#box {
+/* #box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +8,7 @@
     background-color: white;
     padding: 2vw;
     color: black;
-}
+} */
 
 #current-time {
     display: flex;
