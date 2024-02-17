@@ -87,3 +87,19 @@
 /* .front {
     background-color: rgb(194,183,158);
 } */
+
+@media screen and (max-width: 768px) {
+
+    /* .main {
+        width: 25rem;
+    } */
+
+    .btn {
+        margin: 0.5rem;
+        height: 3rem;
+    }
+
+    .container-display {
+        margin: 1rem;
+    }
+}
