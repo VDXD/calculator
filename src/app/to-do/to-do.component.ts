@@ -57,5 +57,4 @@ export class ToDoComponent implements OnInit {
     this.localStorage.saveData('userData', this.tasks);
   }
 
-// no work
 }
