@@ -8,7 +8,7 @@ export class TodoService {
   constructor() { }
 
   saveData(key: string, data: any) {
-    if (typeof localStorage !== 'undefined') {
+    if (this.isLocalStorageAvailable()) {
       localStorage.setItem(key, JSON.stringify(data));
     } else {
       console.error('localStorage is not available.');
@@ -16,7 +16,7 @@ export class TodoService {
   }
 
   getData(key: string) {
-    if (typeof localStorage !== 'undefined') {
+    if (this.isLocalStorageAvailable()) {
       const data = localStorage.getItem(key);
       return data ? JSON.parse(data) : null;
     } else {
@@ -26,10 +26,21 @@ export class TodoService {
   }
 
   removeData(key: string) {
-    if (typeof localStorage !== 'undefined') {
+    if (this.isLocalStorageAvailable()) {
       localStorage.removeItem(key);
     } else {
       console.error('localStorage is not available.');
+    }
+  }
+
+  private isLocalStorageAvailable(): boolean {
+    try {
+      const testKey = 'test';
+      localStorage.setItem(testKey, testKey);
+      localStorage.removeItem(testKey);
+      return true;
+    } catch (e) {
+      return false;
     }
   }
 }
