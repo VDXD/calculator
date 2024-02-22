@@ -15,46 +15,50 @@ import { userInfo } from 'os';
 })
 export class ToDoComponent implements OnInit {
 
-  tasks: Task[] = [];
-  newTask: string = '';
-
-  constructor(private localstorage: TodoService) { }
-
   ngOnInit(): void {
-
-    const dataRetrive = this.localstorage.getData('userData');
-    if (dataRetrive) {
-      this.tasks = dataRetrive;
-    }
-
+      
   }
 
-  addTask() {
-    if (this.newTask.trim() !== '') {
-      const newTask: Task = {
-        name: this.newTask,
-        completed: false
-      };
-      this.tasks.push(newTask);
+  // tasks: Task[] = [];
+  // newTask: string = '';
 
-      this.localstorage.saveData('userData', this.tasks);
+  // constructor(private localstorage: TodoService) { }
 
-      this.newTask = '';
-    }
-  }
+  // ngOnInit(): void {
 
-  removeTask(task: Task) {
-    const taskIndex = this.tasks.indexOf(task);
-    if (taskIndex !== -1) {
-      this.tasks.splice(taskIndex, 1);
-      this.localstorage.saveData('userData', this.tasks)
-    }
+  //   const dataRetrive = this.localstorage.getData('userData');
+  //   if (dataRetrive) {
+  //     this.tasks = dataRetrive;
+  //   }
 
-  }
+  // }
 
-  toggleCompleted(task: Task) {
-    task.completed = !task.completed;
-    this.localstorage.saveData('userData', this.tasks);
-  }
+  // addTask() {
+  //   if (this.newTask.trim() !== '') {
+  //     const newTask: Task = {
+  //       name: this.newTask,
+  //       completed: false
+  //     };
+  //     this.tasks.push(newTask);
+
+  //     this.localstorage.saveData('userData', this.tasks);
+
+  //     this.newTask = '';
+  //   }
+  // }
+
+  // removeTask(task: Task) {
+  //   const taskIndex = this.tasks.indexOf(task);
+  //   if (taskIndex !== -1) {
+  //     this.tasks.splice(taskIndex, 1);
+  //     this.localstorage.saveData('userData', this.tasks)
+  //   }
+
+  // }
+
+  // toggleCompleted(task: Task) {
+  //   task.completed = !task.completed;
+  //   this.localstorage.saveData('userData', this.tasks);
+  // }
 
 }
