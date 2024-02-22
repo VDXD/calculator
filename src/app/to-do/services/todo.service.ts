@@ -8,15 +8,28 @@ export class TodoService {
   constructor() { }
 
   saveData(key: string, data: any) {
-    localStorage.setItem(key, JSON.stringify(data));
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(key, JSON.stringify(data));
+    } else {
+      console.error('localStorage is not available.');
+    }
   }
 
   getData(key: string) {
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+    if (typeof localStorage !== 'undefined') {
+      const data = localStorage.getItem(key);
+      return data ? JSON.parse(data) : null;
+    } else {
+      console.error('localStorage is not available.');
+      return null;
+    }
   }
 
   removeData(key: string) {
-    localStorage.removeItem(key)
+    if (typeof localStorage !== 'undefined') {
+      localStorage.removeItem(key);
+    } else {
+      console.error('localStorage is not available.');
+    }
   }
 }

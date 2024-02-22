@@ -5,12 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Task } from './task.interface';
 import { TodoService } from './services/todo.service';
 import { userInfo } from 'os';
-import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-to-do',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule, BrowserModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './to-do.component.html',
   styleUrl: './to-do.component.css'
 })
