@@ -10,7 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 @Component({
   selector: 'app-to-do',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, BrowserModule],
   templateUrl: './to-do.component.html',
   styleUrl: './to-do.component.css'
 })
