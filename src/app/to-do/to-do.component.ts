@@ -18,11 +18,11 @@ export class ToDoComponent implements OnInit {
   tasks: Task[] = [];
   newTask: string = '';
 
-  constructor(private localStorage: TodoService) { }
+  constructor(private localstorage: TodoService) { }
 
   ngOnInit(): void {
 
-    const dataRetrive = this.localStorage.getData('userData');
+    const dataRetrive = this.localstorage.getData('userData');
     if (dataRetrive) {
       this.tasks = dataRetrive;
     }
@@ -37,7 +37,7 @@ export class ToDoComponent implements OnInit {
       };
       this.tasks.push(newTask);
 
-      this.localStorage.saveData('userData', this.tasks);
+      this.localstorage.saveData('userData', this.tasks);
 
       this.newTask = '';
     }
@@ -47,14 +47,14 @@ export class ToDoComponent implements OnInit {
     const taskIndex = this.tasks.indexOf(task);
     if (taskIndex !== -1) {
       this.tasks.splice(taskIndex, 1);
-      this.localStorage.saveData('userData', this.tasks)
+      this.localstorage.saveData('userData', this.tasks)
     }
 
   }
 
   toggleCompleted(task: Task) {
     task.completed = !task.completed;
-    this.localStorage.saveData('userData', this.tasks);
+    this.localstorage.saveData('userData', this.tasks);
   }
 
 }
