@@ -3,8 +3,12 @@
 @tailwind components;
 @tailwind utilities; */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 body {
     /* background-color: #72a5df; */
     background-color: rgb(43 55 59);
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

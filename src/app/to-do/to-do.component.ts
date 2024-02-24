@@ -15,50 +15,46 @@ import { userInfo } from 'os';
 })
 export class ToDoComponent implements OnInit {
 
+  tasks: Task[] = [];
+  newTask: string = '';
+
+  constructor(private localstorage: TodoService) { }
+
   ngOnInit(): void {
-      
+
+    const dataRetrive = this.localstorage.getData('userData');
+    if (dataRetrive) {
+      this.tasks = dataRetrive;
+    }
+
   }
 
-  // tasks: Task[] = [];
-  // newTask: string = '';
+  addTask() {
+    if (this.newTask.trim() !== '') {
+      const newTask: Task = {
+        name: this.newTask,
+        completed: false
+      };
+      this.tasks.push(newTask);
 
-  // constructor(private localstorage: TodoService) { }
+      this.localstorage.saveData('userData', this.tasks);
 
-  // ngOnInit(): void {
+      this.newTask = '';
+    }
+  }
 
-  //   const dataRetrive = this.localstorage.getData('userData');
-  //   if (dataRetrive) {
-  //     this.tasks = dataRetrive;
-  //   }
+  removeTask(task: Task) {
+    const taskIndex = this.tasks.indexOf(task);
+    if (taskIndex !== -1) {
+      this.tasks.splice(taskIndex, 1);
+      this.localstorage.saveData('userData', this.tasks)
+    }
 
-  // }
+  }
 
-  // addTask() {
-  //   if (this.newTask.trim() !== '') {
-  //     const newTask: Task = {
-  //       name: this.newTask,
-  //       completed: false
-  //     };
-  //     this.tasks.push(newTask);
-
-  //     this.localstorage.saveData('userData', this.tasks);
-
-  //     this.newTask = '';
-  //   }
-  // }
-
-  // removeTask(task: Task) {
-  //   const taskIndex = this.tasks.indexOf(task);
-  //   if (taskIndex !== -1) {
-  //     this.tasks.splice(taskIndex, 1);
-  //     this.localstorage.saveData('userData', this.tasks)
-  //   }
-
-  // }
-
-  // toggleCompleted(task: Task) {
-  //   task.completed = !task.completed;
-  //   this.localstorage.saveData('userData', this.tasks);
-  // }
+  toggleCompleted(task: Task) {
+    task.completed = !task.completed;
+    this.localstorage.saveData('userData', this.tasks);
+  }
 
 }
